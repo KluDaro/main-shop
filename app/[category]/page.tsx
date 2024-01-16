@@ -31,6 +31,7 @@ export default async function CategoryPage({params} : {params: {category: string
             case 'bot': return "Штаны";
             case 'street': return "Куртки";
             case 'footb': return "Футболки";
+            case 'shoes': return "Кроссовки";
             default: return `Ошибки 404. Страница не найдена`;
         }
     };
