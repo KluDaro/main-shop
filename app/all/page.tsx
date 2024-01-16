@@ -5,7 +5,7 @@ import { client } from "../lib/sanity";
 
 async function getData(){
 
-    const query = `*[_type == 'clothEl'][0...4] | order(_createdAt desc) {
+    const query = `*[_type == 'clothEl'][0...9] | order(_createdAt desc) {
         _id,
           grade,
           name,

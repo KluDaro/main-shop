@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getData() {
-  const query = `*[_type == 'clothEl'][0...9] | order(_createdAt desc) {
+  const query = `*[_type == 'clothEl'][0...4] | order(_createdAt desc) {
   _id,
     grade,
     name,
@@ -39,28 +39,28 @@ export default async function Newest() {
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((clothEl) => (
             <div key={clothEl._id} className="group relative">
-              <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80">
-                <Image
-                  src={clothEl.imageURL}
-                  alt={clothEl.name}
-                  className="w-full h-full object-cover"
-                  width={300}
-                  height={300}
-                />
-              </div>
-              <div className=" mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm text-gray-700">
-                    <Link href={`/clothEl/${clothEl.slug}`}>
-                      {clothEl.name}
-                    </Link>
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">
-                    {clothEl.categoryName}
+              <Link href={`/clothEl/${clothEl.slug}`}>
+                <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80">
+                  <Image
+                    src={clothEl.imageURL}
+                    alt={clothEl.name}
+                    className="w-full h-full object-cover"
+                    width={300}
+                    height={300}
+                  />
+                </div>
+                <div className=" mt-4 flex justify-between">
+                  <div>
+                    <h3 className="text-sm text-gray-700">{clothEl.name}</h3>
+                    <p className="mt-1 text-sm text-gray-500">
+                      {clothEl.categoryName}
+                    </p>
+                  </div>
+                  <p className="text-sm font-medium text-gray-900">
+                    $ {clothEl.grade}
                   </p>
                 </div>
-                <p className="text-sm font-medium text-gray-900">$ {clothEl.grade}</p>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
