@@ -5,10 +5,10 @@ import { client } from "../lib/sanity";
 
 async function getData(category: string){
 
-    const query = `*[_type == 'clothEl' && category->name == "${category}"] {
+    const query = `*[_type == 'StrawElement' && category->name == "${category}"] {
         _id,
           "imageURL": images[0].asset->url,
-            grade,
+            price,
           name,
           "slug": slug.current,
           "categoryName": category->name
@@ -27,11 +27,9 @@ export default async function CategoryPage({params} : {params: {category: string
 
     const findH2 = (cat: string) => {
         switch(cat) {
-            case 'top': return "Толстовки";
-            case 'bot': return "Штаны";
-            case 'street': return "Куртки";
-            case 'footb': return "Футболки";
-            case 'shoes': return "Кроссовки";
+            case 'nsd': return "НСД";
+            case 'early': return "Ранняя";
+            case 'latest': return "Поздняя";
             default: return `Ошибки 404. Страница не найдена`;
         }
     };
@@ -40,16 +38,16 @@ export default async function CategoryPage({params} : {params: {category: string
 
     return (
         <div className="bg-white ">
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto max-w-2xl px-4  sm:px-6  lg:max-w-7xl lg:px-8">
         <div className="flex justify-between items-center">
 
-          <h2 className="text-xl md:text-2xl font-bold "> Мои<span className=" text-primary ">{pageH2}</span>  </h2>
+          <h2 className="text-xl md:text-2xl font-bold">{pageH2}</h2>
 
         </div>
         <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
           {data.map((clothEl) => (
             <div key={clothEl._id} className="group relative">
-              <Link href={`/clothEl/${clothEl.slug}`}>
+              <Link href={`/straw/${clothEl.slug}`}>
               <div className="aspect-square w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:h-80">
                 <Image
                   src={clothEl.imageURL}
@@ -64,11 +62,8 @@ export default async function CategoryPage({params} : {params: {category: string
                   <h3 className="text-sm text-gray-700">
                       {clothEl.name}
                   </h3>
-                  <p className="mt-1 text-sm text-gray-500">
-                    {clothEl.categoryName}
-                  </p>
                 </div>
-                <p className="text-sm font-medium text-gray-900">$ {clothEl.grade}</p>
+                <p className="text-sm font-medium text-gray-900">{clothEl.price} руб.</p>
               </div>
               </Link>
             </div>

@@ -1,17 +1,17 @@
 export default {
-    name: 'clothEl',
+    name: 'StrawElement',
     type: 'document',
-    title: 'Вещи',
+    title: 'Клубника',
     fields: [
         {
             name: 'name',
             type: 'string',
-            title: 'Имя вещи'
+            title: 'Название сорта'
         },
         {
             name: 'images',
             type: 'array',
-            title: 'Фото вещей',
+            title: 'Фото клубники',
             of: [{type: 'image'}]
         },
         {
@@ -22,24 +22,24 @@ export default {
         {
             name: 'slug',
             type: 'slug',
-            title: 'Slug вещи',
+            title: 'Тег клубники',
             options : {
                 source: 'name'
             }
         },
         {
-            name: 'grade',
+            name: 'price',
             type: 'number',
-            title: 'Grade',
+            title: 'Цена',
         },
         {
             name: 'price_id',
-            title: 'Stripe price id',
+            title: 'Индикатор',
             type: 'string',
         },
         {
             name: 'category',
-            title: "Категория вещи",
+            title: "Категория клубники",
             type: 'reference',
             to: [
                 {

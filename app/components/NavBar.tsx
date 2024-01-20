@@ -9,12 +9,9 @@ import { useShoppingCart } from "use-shopping-cart";
 const links = [
     
         {name: "Главная", href: "/"},
-        {name: "Толстовки", href: "/top"},
-        {name: "Штаны", href: "/bot"},
-        {name: "Куртки", href: "/street"},
-        {name: "Обувь", href: "/shoes"},
-        {name: "Футболки", href: "/footb"},
-
+        {name: "НСД", href: "/nsd"},
+        {name: "Ранняя", href: "/early"},
+        {name: "Поздняя", href: "/latest"},
 ]
 
 export default function NavBar() {
@@ -23,10 +20,10 @@ export default function NavBar() {
     const { handleCartClick } = useShoppingCart();
 
   return (
-    <header className="mb-8 border-b">
-        <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
+    <header className="mb-8 z-10 bg-white border-b">
+        <div className="flex  items-center  justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
             <Link href="/">
-                <h1 className="text-2xl md:text-4xl font-bold "> Моя<span className=" text-primary ">Одежда</span>  </h1>
+                <h1 className="text-2xl md:text-4xl font-bold "><span className=" text-primary ">Клубника</span>Даром  </h1>
             </Link>
 
             <nav className=" hidden gap-12 lg:flex 2xl:ml-16 ">
@@ -46,7 +43,7 @@ export default function NavBar() {
                 <Button onClick={() => handleCartClick()} variant={"outline"} className="flex flex-col gap-y-1,5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none">
                     <ShoppingBag />
                     <span className="hidden text-xs font-semibold text-gray-500 sm:block">
-                         Лук
+                         Корзина
                     </span>
                 </Button>
             </div>

@@ -1,9 +1,7 @@
 import category from "./category";
-import clothEl from "./cloth-el";
-import heroImages from "./heroImages";
+import StrawElement from "./straw-el";
 
 export const schemaTypes = [
-    clothEl,
-    category,
-    heroImages
+    StrawElement,
+    category
 ];

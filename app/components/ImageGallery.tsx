@@ -30,7 +30,7 @@ export default function ImageGallery({images}: ImageGalleryProps) {
             <div className="relative overflow-hidden rounded-lg bg-gray-100 lg:col-span-4">
                 <Image src={urlFor(bigImage).url()} alt="big photo" width={500} height={500} className="h-full w-full object-cover object-center"/>
                 <span className=" absolute left-0 top-0 rounded-br-lg bg-red-500 px-3 py-1.5 text-sm uppercase tracking-wider text-white" >
-                    S-grade
+                    Новинка
                 </span>
             </div>
         </div>

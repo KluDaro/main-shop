@@ -8,9 +8,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Моя Одежда | VV17CH3R prod.",
-  description: `Мне нужна была практика интернет магазина, и я решил создать сайт с вещами из моего гардероба.
-  Введен функционал собрания луков с подсчетом их общей цены. Это все сделано как демонстрация навыков.`,
+  title: "Клубника даром",
+  description: `Лучшая рассада клубники для Москвы и всей России из питомников Коломны`,
 };
 
 export default function RootLayout({

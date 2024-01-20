@@ -2,7 +2,7 @@
 export interface simplProd {
     _id: string;
     imageURL: string;
-    grade: number;
+    price: number;
     slug: string;
     categoryName: string;
     name: string;
@@ -11,7 +11,7 @@ export interface simplProd {
 export interface fullCloth {
     _id: string;
     images: any;
-    grade: number;
+    price: number;
     slug: string;
     categoryName: string;
     name: string;
