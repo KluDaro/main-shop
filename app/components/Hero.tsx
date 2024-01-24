@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { client, urlFor } from "../lib/sanity";
 import Link from "next/link";
+import { Truck } from "lucide-react";
 
 
 export default async function Hero() {
@@ -19,7 +20,7 @@ export default async function Hero() {
                 className="w-full absolute top-0 left-0 h-[60vh] object-cover -z-10 brightness-[60%]"
           />
           <h1 className="mb-4 text-4xl -z-10 font-bold  lg:text-black/90 text-white sm:text-5xl md:mb-8 md:text-6xl">
-            Сади рассаду - клубника даром.
+            Сажай рассаду - клубника даром.
           </h1>
           <p className="max-w-md z-10 leading-relaxed lg:text-black/90 text-gray-100 xl:text-lg">
           Лучшая рассада клубники для Москвы и всей России из питомников Коломны
@@ -48,25 +49,33 @@ export default async function Hero() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-between gap-3 md:gap-8 md:flex-row">
-        <div className="flex h-12 w-72 divide-x overflow-hidden rounded-lg border">
+      <div className="flex flex-col justify-between items-center  gap-3 md:gap-8 md:flex-row">
+        <div className="flex p-1 h-12 bg-primary/50  w-72 divide-x overflow-hidden rounded-lg border">
           <Link
             href="/nsd"
-            className="flex px-2 w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+            className="flex px-2 w-1/3 items-center justify-center text-gray-900 transition duration-100 hover:bg-primary/30 active:bg-gray-200"
           >
             НСД
           </Link>
           <Link
             href="/early"
-            className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+            className="flex w-1/3 items-center justify-center text-gray-900 transition duration-100 hover:bg-primary/30  active:bg-primary/60"
           >
             Ранняя
           </Link>
           <Link
             href="/latest"
-            className="flex w-1/3 items-center justify-center text-gray-500 transition duration-100 hover:bg-gray-100 active:bg-gray-200"
+            className="flex w-1/3 items-center justify-center text-gray-900 transition duration-100 hover:bg-primary/30 active:bg-gray-200"
           >
             Поздняя
+          </Link>
+        </div>
+        <div className="flex p-1 h-12 bg-primary/50  w-72 divide-x overflow-hidden rounded-lg border" >
+          <Link
+            href="/latest"
+            className="flex w-full items-center justify-center text-gray-900 transition duration-100 hover:bg-primary/30 active:bg-gray-200"
+          >
+             <Truck className="mr-4" /> Условия доставки
           </Link>
         </div>
       </div>

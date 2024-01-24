@@ -27,10 +27,10 @@ export default async function Newest() {
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <div className="flex justify-between items-center">
           <h2 className="text-xl font-bold tracking-tight text-gray-900">
-            Недавно добавленные
+            Недавно добавленные товары
           </h2>
-          <Link href="/all" className="text-primary flex items-center gap-x-1">
-            Все сорта...
+          <Link href="/all" className="text-primary bg-white border border-gray-400/50 px-3 py-1 rounded-lg flex items-center gap-x-1">
+            Все сорта
             <span>
               <ArrowRight />
             </span>
